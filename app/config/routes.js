@@ -11,7 +11,7 @@ const router = (
             <Route path='yoga' component={Yoga} />
             <Route path='notes' component={Notes} />
             <Route path='about' component={About} />
-            <IndexRoute component={Yoga} />
+            <IndexRoute component={About} />
         </Route>
     </Router>
 );
