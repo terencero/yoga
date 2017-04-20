@@ -1,7 +1,5 @@
 .about-section {
-    display: inline-block;
-}
-
-img {
+    display: block;
     text-align: center;
 }
+

@@ -9,9 +9,13 @@ const router = express.Router();
 
 const instagramKey = keys.instagramKeys.access_token;
 
-var options = {
+router.get('/yogaInstagram', function(req, res) {
+    var options = {
     method: 'GET',
     uri: 'https://api.instagram.com/v1/tags/nofilter/media/recent?access_token=' + instagramKey,
+    headers: {
+        'User-Agent': 'Request-Promise'
+    },
     json: true // Automatically stringifies the body to JSON 
 };
  
@@ -24,6 +28,9 @@ rp(options)
         // POST failed... 
         console.log(err);
     }); 
+
+})
+
 
 
 
