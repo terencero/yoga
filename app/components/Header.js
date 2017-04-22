@@ -6,7 +6,7 @@ class Header extends React.Component {
         return (
             <div className='header'>
                 <ul>
-                    <li><Link to='main' activeClassName='active'>
+                    <li><Link to='/' activeClassName='active'>
                         Main
                     </Link></li>
                     <li><Link to='yoga' activeClassName='active'>
@@ -16,7 +16,7 @@ class Header extends React.Component {
                         About
                     </Link></li>
                     <li><Link to='notes' activeClassName='active'>
-                        Notes
+                        Notes from the Mat
                     </Link></li>
                 </ul>
             </div>
