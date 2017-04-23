@@ -23,10 +23,11 @@ router.get('/yogaInstagram', function(req, res) {
 };
  
 rp(options)
-    .then(function (parsedBody) {
+    .then(function (response) {
         // POST succeeded... 
-        console.log(parsedBody.data[0].images);
-        res.send(parsedBody.data[0].images);
+        console.log(response.data[0].images);
+        console.log(response.data[0].caption)
+        res.json(response.data[0]);
     })
     .catch(function (err) {
         // POST failed... 
