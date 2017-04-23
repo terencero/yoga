@@ -3,11 +3,11 @@ import * as axios from 'axios';
 
 class Yoga extends React.Component {
 
-    // componentDidMount() {
-    //     // axios.get('/yogaInstagram').then((response) => {
-    //     //     console.log('instagram res', response);
-    //     // });
-    //     }
+    componentWillMount() {
+        axios.get('/yogaInstagram').then((response) => {
+            console.log('instagram res', response);
+        });
+        }
     render() {
         return (
             <div>

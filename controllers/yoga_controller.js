@@ -8,11 +8,11 @@ const keys = require('../keys');
 const router = express.Router();
 
 const instagramKey = keys.instagramKeys.access_token;
-/*
+
 router.get('/yogaInstagram', function(req, res) {
     var options = {
     method: 'GET',
-    uri: 'https://api.instagram.com/v1/tags/nofilter/media/recent?access_token=' + instagramKey,
+    uri: 'https://api.instagram.com/v1/users/self/media/recent?count=1&access_token=' + instagramKey,
     qs: {
         access_token: instagramKey
     },
@@ -25,15 +25,18 @@ router.get('/yogaInstagram', function(req, res) {
 rp(options)
     .then(function (parsedBody) {
         // POST succeeded... 
-        console.log(parsedBody.data);
+        console.log(parsedBody.data[0].images);
+        res.send(parsedBody.data[0].images);
     })
     .catch(function (err) {
         // POST failed... 
         console.log(err);
     }); 
 
-})
-*/
+
+
+});
+
 
 
 
