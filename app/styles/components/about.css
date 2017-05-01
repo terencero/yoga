@@ -2,4 +2,8 @@
     display: block;
     text-align: center;
 }
-
+.profile {
+    text-align: left;
+    width: 580px;
+    display: inline-block;
+}

@@ -6,17 +6,20 @@ class Header extends React.Component {
         return (
             <div className='header'>
                 <ul>
-                    <li><Link to='/' activeClassName='active'>
-                        Main
-                    </Link></li>
-                    <li><Link to='yoga' activeClassName='active'>
-                        Yoga
-                    </Link></li>
                     <li><Link to='about' activeClassName='active'>
                         About
                     </Link></li>
                     <li><Link to='notes' activeClassName='active'>
                         Notes from the Mat
+                    </Link></li>
+                    <li><Link to='schedule' activeClassName='active'>
+                        Schedule
+                    </Link></li>
+                    <li><Link to='yoga' activeClassName='active'>
+                        Yoga
+                    </Link></li>
+                    <li><Link to='practice' activeClassName='active'>
+                        Practice
                     </Link></li>
                 </ul>
             </div>
