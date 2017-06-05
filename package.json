@@ -34,7 +34,9 @@
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "css-loader": "^0.27.3",
+    "file-loader": "^0.11.2",
     "style-loader": "^0.14.1",
+    "url-loader": "^0.5.8",
     "webpack": "^1.13.1"
   },
   "homepage": "https://github.com/terencero/yoga#readme"

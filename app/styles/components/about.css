@@ -2,8 +2,20 @@
     display: block;
     text-align: center;
 }
+
 .profile {
-    text-align: left;
+    text-align: center;
     width: 580px;
     display: inline-block;
+}
+
+.parallax {
+    /* the image used */
+    background-image: url('../../../public/images/background.jpg');
+
+    /* create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

@@ -1,11 +1,20 @@
 import * as React from 'react';
-// import { mainPic } from '../images/main-pic.png';
+import  Background  from '../../public/images/background.jpg';
+
+
+let parallaxStyle = {
+    width: '100%',
+    heigth: '400px',
+    backgroundImage: 'url(${Background})'
+}
 
 class About extends React.Component {
     render() {
         return (
             <div className="about-section">
+
                 <img src="./images/mainPic.png" alt="Profile Picture" />
+                <div className="parallax" style={parallaxStyle}></div>
                 <h2>About Jiwoo</h2>
                 <div className="profile">
                     <p>

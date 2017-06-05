@@ -29,6 +29,19 @@ module.exports = {
       {
         test: /\.css$/,
         loader: "style-loader!css-loader"
+      },
+      // {
+      //   test: /\.(jpe?g|png|gif|svg)$/i, 
+      //   // loader: "file-loader?name=[name].[ext]&publicPath=public/images/"
+      //   loader: "file-loader?name=public/images/[name].[ext]"
+      // }
+      {
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        loader: "url-loader",
+        options: {
+          limit: 10000,
+          url: true
+        }
       }
     ]
   },
