@@ -1,18 +1,25 @@
+* {
+    margin: 0;
+}
 .about-section {
-    display: block;
+    /*display: block;*/
     text-align: center;
 }
 
-.profile {
+.profile1, .profile2 {
     text-align: center;
     width: 580px;
-    display: inline-block;
+    /*display: block;*/
+    height: 500px;
+    background: none;
 }
 
 .parallax {
     /* the image used */
     background-image: url('../../../public/images/background.jpg');
+    display: block;
 
+    height: 800px;
     /* create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;

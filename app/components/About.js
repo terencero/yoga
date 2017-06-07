@@ -1,12 +1,5 @@
 import * as React from 'react';
-import  Background  from '../../public/images/background.jpg';
 
-
-let parallaxStyle = {
-    width: '100%',
-    heigth: '400px',
-    backgroundImage: 'url(${Background})'
-}
 
 class About extends React.Component {
     render() {
@@ -14,16 +7,18 @@ class About extends React.Component {
             <div className="about-section">
 
                 <img src="./images/mainPic.png" alt="Profile Picture" />
-                <div className="parallax" style={parallaxStyle}></div>
                 <h2>About Jiwoo</h2>
-                <div className="profile">
+                <div className="parallax"></div>
+                <div className="profile1">
                     <p>
                         I was born & raised in Korea till I was about 16 years old. Throughout my teenage years I remember contemplating and searching for the true meaning & purpose of life and longing for the freedom to see the world and choose the life I wanted to live. I was always searching for something that I didn't even know existed.</p>
 
                     <p>I got lucky and sent to New Zealand to study then to England. Ever since then I have had the privilege of traveling around the world meeting friends from other cultures, experiencing & exploring life. Although I had fun and all, there was always a feeling of void & emptiness that I couldn't fill no matter what I was doing or where I was.</p>
 
                     <p>My first yoga experience was during my college years in London, I immediately fell in love with asanas and started collecting books and dvds on yoga. Unable to afford classes at yoga studios, I often practiced at home contorting my body into interesting shapes. I went on like this for about 10 years without knowing what yoga really was.</p>
-
+</div>
+<div className="parallax"></div>
+<div className="profile2">
                     <p>In the midst of chaotic life as a new mom of two children, I discovered Ashtanga Vinyasa yoga and its welcoming community. I felt a sense of coming home with this practice since everywhere I went everybody was speaking the same language that is yoga.
 After discovering the rest of the limbs of yoga beyond asanas, I delved deeply into yoga philosophy & history and realized that the more I studied the more there was to learn.</p>
 
