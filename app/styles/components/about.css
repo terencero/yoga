@@ -2,8 +2,11 @@
     margin: 0;
 }
 .about-section {
-    /*display: block;*/
+    display: block;
+    position: relative;
     text-align: center;
+    width: 650px;
+    margin: 0 auto;
 }
 
 .profile1, .profile2 {
