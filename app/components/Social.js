@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router';
 
-class Schedule extends React.Component {
+class Social extends React.Component {
     render() {
         return (
             <div className="class-schedules">
@@ -11,4 +11,4 @@ class Schedule extends React.Component {
     }
 }
 
-export { Schedule };
+export { Social };

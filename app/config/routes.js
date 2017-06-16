@@ -4,7 +4,7 @@ import { Main } from '../components/Main';
 import { Yoga } from '../components/Yoga';
 import { Notes } from '../components/Notes';
 import { About } from '../components/About';
-import { Schedule } from '../components/Schedule';
+import { Social } from '../components/Social';
 import { Practice } from '../components/Practice';
 
 const router = (
@@ -13,7 +13,7 @@ const router = (
             <Route path='yoga' component={Yoga} />
             <Route path='notes' component={Notes} />
             <Route path='about' component={About} />
-            <Route path='schedule' component={Schedule} />
+            <Route path='social' component={Social} />
             <Route path='practice' component={Practice} />
             <IndexRoute component={About} />
         </Route>
