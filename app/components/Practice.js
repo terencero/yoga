@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as axios from 'axios';
 
-class Practice extends React.Component {
+class Social extends React.Component {
 
     componentWillMount() {
         this.initializeState();
@@ -52,4 +52,4 @@ class Practice extends React.Component {
     }
 }
 
-export { Practice };
+export { Social };
