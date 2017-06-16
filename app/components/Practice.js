@@ -1,44 +1,15 @@
 import * as React from 'react';
-import * as axios from 'axios';
+import { Link } from 'react-router';
 
-class Social extends React.Component {
-
-    componentWillMount() {
-        this.initializeState();
-    }
-
-    componentDidMount() {
-        this.getInstagramPosts();
-
-    }
-
-    initializeState() {
-        this.setState({
-            instagramPost: []
-        });
-    }
-
-    getInstagramPosts() {
-        axios.get('/yogaInstagram').then((response) => {
-            console.log('instagram res', response.data);
-            this.setState({
-                instagramPost: [response.data]
-            });
-        });
-    }
+class Practice extends React.Component {
     render() {
-        let instaPostMap = this.state.instagramPost.map((item, index) => {
-            return ( 
-             <div key={index}>   
-            <img width='450' src={item.images.standard_resolution.url} /> 
-             <p>{item.caption.text} </p>
-             </div>
-             )
-        });
         return (
-            <div>
-                <div className="instagram">
-                    {instaPostMap}
+            <div className="class-schedules">
+                <div className="classes">
+                    <p>Title</p>
+                    <p>Date and time</p>
+                    <p>Where</p>
+                    <p>About</p>
                 </div>
                 <div className="workshops">
                     <p>Title</p>
@@ -46,10 +17,9 @@ class Social extends React.Component {
                     <p>Where</p>
                     <p>About</p>
                 </div>
-
             </div>
-        );
+        )
     }
 }
 
-export { Social };
+export { Practice };

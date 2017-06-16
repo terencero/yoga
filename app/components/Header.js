@@ -12,8 +12,8 @@ class Header extends React.Component {
                     <li><Link to='notes' activeClassName='active'>
                         Notes from the Mat
                     </Link></li>
-                    <li><Link to='schedule' activeClassName='active'>
-                        Schedule
+                    <li><Link to='social' activeClassName='active'>
+                        Social
                     </Link></li>
                     <li><Link to='yoga' activeClassName='active'>
                         Yoga

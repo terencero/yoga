@@ -1,0 +1,5 @@
+.class-schedules, .workshops {
+    width: 50%;
+    position: relative;
+    display: inline-block;
+}
