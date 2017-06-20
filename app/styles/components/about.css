@@ -3,7 +3,7 @@
 }
 .about-section {
     display: block;
-    position: relative;
+    position: static;
     text-align: center;
     width: 650px;
     margin: 0 auto;
@@ -19,10 +19,10 @@
 
 .parallax {
     /* the image used */
-    background-image: url('../../../public/images/background.jpg');
+    background-image: url('../../../public/images/monotonebackground.png');
     display: block;
 
-    height: 800px;
+    height: 200px;
     /* create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
