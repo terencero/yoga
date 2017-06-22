@@ -6,15 +6,23 @@ class Practice extends React.Component {
         return (
             <div className="class-schedules">
                 <div className="classes">
-                    <p>Title</p>
-                    <p>Date and time</p>
-                    <p>Where</p>
-                    <p>About</p>
+                    <div className="la-fitness">
+                        <p>Vinyasa Yoga</p>
+                        <p>Thursdays at 7pm</p>
+                        <p>LA Fitness (add link to map or embed?)</p>
+                        <p>Description of class</p>
+                    </div>
+                    <div className="northshore">
+                        <p>Vinyasa Flow</p>
+                        <p>Mondays at 7pm</p>
+                        <p>Evanston NorthShore Yoga Studio</p>
+                        <p>Description of class</p>
+                    </div>
                 </div>
                 <div className="workshops">
-                    <p>Title</p>
+                    <p>Vinyasa Flow I</p>
                     <p>Date and time</p>
-                    <p>Where</p>
+                    <p>Evanston NorthShore Yoga Studio</p>
                     <p>About</p>
                 </div>
             </div>
