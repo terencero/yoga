@@ -25,9 +25,9 @@ router.get('/yogaInstagram', function(req, res) {
 rp(options)
     .then(function (response) {
         // POST succeeded... 
-        console.log(response.data[0].images);
-        console.log(response.data[0].caption);
-        console.log(response.data);
+        // console.log(response.data[0].images);
+        // console.log(response.data[0].caption);
+        console.log(response.data[0].videos);
         res.json(response.data[0]);
     })
     .catch(function (err) {

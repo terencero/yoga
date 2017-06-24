@@ -31,6 +31,9 @@ class Social extends React.Component {
             return ( 
              <div key={index}>   
             <img width='450' src={item.images.standard_resolution.url} /> 
+            <video width='450' type='video/mp4' autoPlay>
+             <source src={item.videos.standard_resolution.url} />
+             </video>
              <p>{item.caption.text} </p>
              </div>
              )
