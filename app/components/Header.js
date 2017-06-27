@@ -18,8 +18,8 @@ class Header extends React.Component {
                     <li><Link to='yoga' activeClassName='active'>
                         Yoga
                     </Link></li>
-                    <li><Link to='practice' activeClassName='active'>
-                        Practice
+                    <li><Link to='schedule' activeClassName='active'>
+                        Schedule
                     </Link></li>
                 </ul>
             </div>

@@ -19,10 +19,10 @@
 
 .parallax {
     /* the image used */
-    background-image: url('../../../public/images/monotonebackground.png');
+    background-image: url('../../../public/images/about.jpg');
     display: block;
 
-    height: 200px;
+    height: 400px;
     /* create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;

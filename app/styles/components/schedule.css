@@ -1,0 +1,5 @@
+.classes, .workshops {
+    width: 50%;
+    position: static;
+    display: inline-grid;
+}

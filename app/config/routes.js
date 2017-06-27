@@ -5,7 +5,7 @@ import { Yoga } from '../components/Yoga';
 import { Notes } from '../components/Notes';
 import { About } from '../components/About';
 import { Social } from '../components/Social';
-import { Practice } from '../components/Practice';
+import { Schedule } from '../components/Schedule';
 
 const router = (
     <Router history={hashHistory}>
@@ -14,7 +14,7 @@ const router = (
             <Route path='notes' component={Notes} />
             <Route path='about' component={About} />
             <Route path='social' component={Social} />
-            <Route path='practice' component={Practice} />
+            <Route path='schedule' component={Schedule} />
             <IndexRoute component={About} />
         </Route>
     </Router>
