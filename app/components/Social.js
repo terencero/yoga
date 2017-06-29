@@ -28,13 +28,17 @@ class Social extends React.Component {
     }
     render() {
         let instaPostMap = this.state.instagramPost.map((item, index) => {
+            // logic to display image if video is null or undefined
+            let image;
+                    if (item.videos=== null || item.videos === undefined) {
+                        image = <img width="450" src={item.images.standard_resolution.url} />;
+                    } else {
+                        image = <video width="450" type="video/mp4" autoPlay> <source src="item.videos.standard_resolution.url" />
+                        </video>;
+                    }
             return (
                 <div key={index}>
-                    <img width='450' src={item.images.standard_resolution.url} />
-                    {/*fix or remove the video tag*/}
-                    {/*<video width='450' type='video/mp4' autoPlay>
-                        <source src={item.videos.standard_resolution.url} />
-                    </video>*/}
+                    {image}
                     <p>{item.caption.text} </p>
                 </div>
             )
