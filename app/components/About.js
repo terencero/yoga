@@ -6,10 +6,10 @@ class About extends React.Component {
         return (
             <div className="about-section">
 
-                {/*<img src="./images/mainPic.png" alt="Profile Picture" />*/}
                 <div className="parallax"></div>
-                <h2>About Jiwoo</h2>
                 <div className="profile">
+                <h2>About Jiwoo</h2>
+                <img src="./images/mainPic.png" alt="Profile Picture" height="150px" id="profile-pic" />
                     <p>I was born &amp; raised in Korea till I was about 16 years old. Throughout my teenage years I remember contemplating and searching for the true meaning &amp; purpose of life and longing for the freedom to see the world and choose the life I wanted to live. I was always searching for something that I didn't even know existed.</p>
                     <br></br>
                     <p>I got lucky and sent to New Zealand to study then to England. Ever since then I have had the privilege of traveling around the world meeting friends from other cultures, experiencing &amp; exploring life. Although I had fun and all, there was always a feeling of void &amp; emptiness that I couldn't fill no matter what I was doing or where I was.</p>
