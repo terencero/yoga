@@ -9,6 +9,17 @@ const router = express.Router();
 
 const instagramKey = keys.instagramKeys.access_token;
 
+ // Initialize Firebase
+  const config = {
+    apiKey: "AIzaSyDf3KnVgHX2bsMwU4apropmA-3CsHQCW64",
+    authDomain: "yoga-f59e1.firebaseapp.com",
+    databaseURL: "https://yoga-f59e1.firebaseio.com",
+    projectId: "yoga-f59e1",
+    storageBucket: "",
+    messagingSenderId: "431249882505"
+  };
+  firebase.initializeApp(config);
+
 router.get('/yogaInstagram', function(req, res) {
     var options = {
     method: 'GET',
@@ -38,6 +49,8 @@ rp(options)
 
 
 });
+
+
 
 
 
