@@ -18,6 +18,21 @@ class Social extends React.Component {
         });
     }
 
+    constructor() {
+        super();
+        this.state = {
+            comment: '',
+            user: ''
+        }
+        this.handleChange= this.handleChange.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({
+            [event.target.name]: event.target.value
+        });
+    }
+
     getInstagramPosts() {
         axios.get('/yogaInstagram').then((response) => {
             console.log('instagram res', response.data);
@@ -30,12 +45,12 @@ class Social extends React.Component {
         let instaPostMap = this.state.instagramPost.map((item, index) => {
             // logic to display image if video is null or undefined
             let image;
-                    if (item.videos=== null || item.videos === undefined) {
-                        image = <img width="450" src={item.images.standard_resolution.url} />;
-                    } else {
-                        image = <video width="450" type="video/mp4" autoPlay> <source src="item.videos.standard_resolution.url" />
-                        </video>;
-                    }
+            if (item.videos === null || item.videos === undefined) {
+                image = <img width="450" src={item.images.standard_resolution.url} />;
+            } else {
+                image = <video width="450" type="video/mp4" autoPlay> <source src="item.videos.standard_resolution.url" />
+                </video>;
+            }
             return (
                 <div key={index}>
                     {image}
@@ -54,7 +69,19 @@ class Social extends React.Component {
                     <p>Where</p>
                     <p>About</p>
                 </div>
+                <div className="comments">
+                    <input type="text" name="user" placeholder="What's your name?" onChange={this.handleChange} value={this.state.user} />
+                    <label htmlFor="comment-input">Add comments here.</label>
+                    <textarea
+                        name="comment"
+                        id="comment-input"
+                        cols="30"
+                        rows="10"
+                        onChange={this.handleChange}
+                        value={this.state.comment} />
 
+                    <button id="add-comment">Submit</button>
+                </div>
             </div>
         );
     }
