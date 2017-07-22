@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as axios from 'axios';
+import firebase from '../../controllers/firebase.js';
 
 class Social extends React.Component {
 
@@ -24,7 +25,22 @@ class Social extends React.Component {
             comment: '',
             user: ''
         }
-        this.handleChange= this.handleChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        const commentsRef = firebase.database().ref('comments');
+        const commentObj = {
+            comment: this.state.comment,
+            user: this.state.user
+        }
+        commentsRef.push(commentObj);
+        this.setState({
+            comment: '',
+            user: ''
+        });
     }
 
     handleChange(event) {
@@ -69,6 +85,7 @@ class Social extends React.Component {
                     <p>Where</p>
                     <p>About</p>
                 </div>
+                <form onSubmit={this.handleSubmit} >
                 <div className="comments">
                     <input type="text" name="user" placeholder="What's your name?" onChange={this.handleChange} value={this.state.user} />
                     <label htmlFor="comment-input">Add comments here.</label>
@@ -82,6 +99,7 @@ class Social extends React.Component {
 
                     <button id="add-comment">Submit</button>
                 </div>
+                </form>
             </div>
         );
     }
