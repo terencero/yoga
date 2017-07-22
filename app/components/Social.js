@@ -4,12 +4,38 @@ import firebase from '../../controllers/firebase.js';
 
 class Social extends React.Component {
 
+    constructor() {
+        super();
+        this.state = {
+            comment: '',
+            user: '',
+            comments: []
+        }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
     componentWillMount() {
         this.initializeState();
     }
 
     componentDidMount() {
         this.getInstagramPosts();
+        const commentsRef = firebase.database().ref('comments');
+        commentsRef.on('value', (snapshot) => {
+            let comments = snapshot.val();
+            let newState = [];
+            for (let item in comments) {
+                newState.push({
+                    id: item,
+                    comment: comments[item].comment,
+                    user: comments[item].user
+                });
+        }
+        this.setState({
+            comments: newState
+        });
+        });
 
     }
 
@@ -17,16 +43,6 @@ class Social extends React.Component {
         this.setState({
             instagramPost: []
         });
-    }
-
-    constructor() {
-        super();
-        this.state = {
-            comment: '',
-            user: ''
-        }
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(event) {
@@ -58,7 +74,7 @@ class Social extends React.Component {
         });
     }
     render() {
-        let instaPostMap = this.state.instagramPost.map((item, index) => {
+        const instaPostMap = this.state.instagramPost.map((item, index) => {
             // logic to display image if video is null or undefined
             let image;
             if (item.videos === null || item.videos === undefined) {
@@ -74,6 +90,14 @@ class Social extends React.Component {
                 </div>
             )
         });
+        const commentsMap = this.state.comments.map((item) => {
+            return (
+                <li key={item.id}>
+                    <p>{item.user}</p>
+                    <p>{item.comment}</p>
+                </li>
+            )
+        }); 
         return (
             <div>
                 <div className="instagram">
@@ -84,6 +108,11 @@ class Social extends React.Component {
                     <p>Date and time</p>
                     <p>Where</p>
                     <p>About</p>
+                </div>
+                <div>
+                    <ul className="comments-display">
+                        {commentsMap}
+                    </ul>
                 </div>
                 <form onSubmit={this.handleSubmit} >
                 <div className="comments">
