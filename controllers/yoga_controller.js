@@ -1,5 +1,5 @@
 // GET requests to https url
-const rp = require('request-promise');
+const rp = require('request-promise-native');
 const express = require('express');
 // dependency for request-promise
 const request = require('request');
@@ -8,35 +8,56 @@ const keys = require('../keys');
 const router = express.Router();
 
 const instagramKey = keys.instagramKeys.access_token;
+const youTubeKey = keys.youTubeKeys.key;
 
-router.get('/yogaInstagram', function(req, res) {
-    let options = {
+router.get('/yogaInstagram', function (req, res) {
+  let options = {
     method: 'GET',
-    uri: 'https://api.instagram.com/v1/users/self/media/recent?count=1&access_token=' + instagramKey,
+    uri: `https://api.instagram.com/v1/users/self/media/recent?count=1&access_token=${instagramKey}`,
     qs: {
-        access_token: instagramKey
+      access_token: instagramKey
     },
     headers: {
-        'User-Agent': 'Request-Promise'
+      'User-Agent': 'Request-Promise'
     },
     json: true // Automatically stringifies the body to JSON 
-};
- 
-rp(options)
+  };
+
+  rp(options)
     .then(function (response) {
-        // POST succeeded... 
-        // console.log(response.data[0].images);
-        // console.log(response.data[0].caption);
-        console.log(response.data[0].videos);
-        res.json(response.data[0]);
+      // POST succeeded... 
+      // console.log(response.data[0].images);
+      // console.log(response.data[0].caption);
+      console.log(response.data[0].videos);
+      res.json(response.data[0]);
     })
     .catch(function (err) {
-        // POST failed... 
-        console.log(err);
-    }); 
+      // POST failed... 
+      console.log(err);
+    });
+});
 
+router.get('/yogaYouTube', function(req, res) {
+  let options = {
+    method: 'GET',
+    uri: `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=oLZ0GFg9hgk&key=${youTubeKey}`,
+    qs: {
+      access_token: youTubeKey
+    },
+    headers: {
+      'User-Agent': 'Request-Promise' // is this request promise syntax?
+    },
+    json: true // Automatically stringifies the body to JSON
+  };
 
+  rp(options).then( function(response) {
+    console.log('youtube data>>',response);
+    res.json(response);
+  }).catch((err) => {
+    console.log(err);
+  });
 
+  // 'https://www.youtube.com/embed?listType=user_uploads&list=USERNAME'
 });
 
 module.exports = router;

@@ -2,39 +2,36 @@
     margin: 0;
 }
 
-.about-section {
+/* .about-section {
     display: inline-block;
     position: static;
     /*text-align: center;*/
     /*width: 650px;*/
-    margin: 0 auto;
-}
+    /* margin: 0 auto; */
+/* } */
 
-.profile h2 {
+/* .profile h2 {
     text-align: center;
-}
+} */
 
-#profile-pic {
+/* #profile-pic {
     float: left;
-}
+} */
 
-.profile1,
-.profile2 {
+/* .profile1, */
+/* .profile2 {
     text-align: center;
-    width: 580px;
+    width: 580px; */
     /*display: block;*/
-    height: 500px;
-    background: none;
-}
+    /* height: 500px; */
+    /* background: none; */
+/* } */
 
-.parallax {
-    /* the image used */
-    background-image: url('../../../public/images/about.jpg');
-    display: block;
-    height: 400px;
-    /* create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+/* .about-section h1 {
+  color: white;
+} */
+
+/* .hero { */
+  /* background: #ffb3b3; */
+  /* background-image: url("../../../public/images/IMG_0215.jpg"); */
+/* } */

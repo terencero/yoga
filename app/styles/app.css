@@ -3,4 +3,6 @@
 @import 'components/about.css';
 @import 'components/yoga.css';
 @import 'components/notes.css';
-@import 'components/schedule.css'
+@import 'components/schedule.css';
+/* @import '~bulma'; TODO: need to figure out how to fix aliasing problem in webpack */ 
+@import '../../node_modules/bulma/css/bulma.css'; /* temporary until alias in webpack is figured out */
