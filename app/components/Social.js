@@ -69,7 +69,7 @@ class Social extends React.Component {
     axios.get('/yogaInstagram').then((response) => {
       console.log('instagram res', response.data);
       this.setState({
-        instagramPost: [response.data]
+        instagramPost: response.data
       });
     });
   }
@@ -84,8 +84,9 @@ class Social extends React.Component {
   }
 
   render() {
-    const instaPostMap = this.state.instagramPost.map((item, index) => {
+    const instaPostMap = this.state.instagramPost.map((item) => {
       // logic to display image if video is null or undefined
+      // wha
       let image;
       if (item.videos === null || item.videos === undefined) {
         image = <img height="293" width="293" src={item.images.standard_resolution.url} />;
@@ -94,15 +95,17 @@ class Social extends React.Component {
         </video>;
       }
       return (
-        <div className="card" key={index}>
-          <div className="card-image">
-            <figure className="image">
-              {image}
-            </figure>
-          </div>
-          <div className="card-content">
-            <div className="content">
-              {item.caption.text}
+        <div className="column">
+          <div className="card">
+            <div className="card-image">
+              <figure className="image is-128x128">
+                {image}
+              </figure>
+            </div>
+            <div className="card-content">
+              <div className="content">
+                {item.caption.text}
+              </div>
             </div>
           </div>
         </div>
@@ -122,12 +125,19 @@ class Social extends React.Component {
           <iframe src={`https://www.youtube.com/embed/${item.items[0].id}`} frameBorder="0" height="293" width="293"></iframe>
         </div>
       )
-    })
+    });
     return (
       <div>
         <div className="columns">
           <div className="instagram column">
-            {instaPostMap}
+            <div className="columns">
+              {instaPostMap[0]}
+              {instaPostMap[1]}
+              {instaPostMap[2]}
+              {instaPostMap[3]}
+              {instaPostMap[4]}
+              {instaPostMap[5]}
+            </div>
           </div>
           <div className="youtube column">
             {youTubeMap}

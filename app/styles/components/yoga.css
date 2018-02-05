@@ -2,3 +2,22 @@
     display: inline-block;
     width: 593px;
 }
+.main-row {
+  height: 300px;
+}
+.main-row.banner {
+  height: 600px;
+}
+
+.main-row.bio, .main-row.social {
+  background-color: silver;
+  opacity: 1;
+}
+.main-row.bio {
+  text-align: center;
+  padding: 120px;
+}
+.banner {
+  background-image: url("../../../public/images/eka.jpg");
+  background-size: 1500px;
+}

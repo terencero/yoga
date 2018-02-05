@@ -13,7 +13,7 @@ const youTubeKey = keys.youTubeKeys.key;
 router.get('/yogaInstagram', function (req, res) {
   let options = {
     method: 'GET',
-    uri: `https://api.instagram.com/v1/users/self/media/recent?count=1&access_token=${instagramKey}`,
+    uri: `https://api.instagram.com/v1/users/self/media/recent?count=6&access_token=${instagramKey}`,
     qs: {
       access_token: instagramKey
     },
@@ -28,8 +28,8 @@ router.get('/yogaInstagram', function (req, res) {
       // POST succeeded... 
       // console.log(response.data[0].images);
       // console.log(response.data[0].caption);
-      console.log(response.data[0].videos);
-      res.json(response.data[0]);
+      console.log('insta', response.data);
+      res.json(response.data);
     })
     .catch(function (err) {
       // POST failed... 
